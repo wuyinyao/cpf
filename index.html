@@ -3,19 +3,23 @@
   </head>
   <body>
     CPF APPBuilder!
-	<input type="button" onclick="turnOnOff(1)" value="Turn On">
-	<input type="button" onclick="turnOnOff(0)" value="Turn Off">
+    <p>
+    <input type="button" onclick="turnOnOff(1)" value="Turn On">
+    <input type="button" onclick="turnOnOff(0)" value="Turn Off">
+    <input type="button" onclick="speed(0)" value="Stop">
+    <input type="button" onclick="speed(100)" value="100">
+    <input type="button" onclick="speed(255)" value="255">
   </body>
    <script>
      if (cpf){
       cpf.setPinMode('["resetPin"],["setPinMode","digital",2,"OUTPUT"],["setPinMode","digital",3,"PWM"]');
-      cpf.sleep(2000);
-      cpf.set("white led", 0);
-      cpf.set("fan", 0);
-      cpf.sleep(2000);
-      cpf.set("white led", 1);
-      cpf.set("fan",200);
-     // cpf.repeat();
+       //cpf.sleep(2000);
+       //cpf.set("white led", 0);
+       //cpf.set("fan", 0);
+       //cpf.sleep(2000);
+       //cpf.set("white led", 1);
+       //cpf.set("fan",200);
+       // cpf.repeat();
      }
      function turnOnOff(val){
 		   if (cpf){
@@ -24,6 +28,14 @@
 		   else{
 			    alert("cpf is empty");
 		   }
-	   }
+     }
+    function speed(val){
+		   if (cpf){
+		     cpf.set("fan", val);
+		   }
+		   else{
+			    alert("cpf is empty");
+		   }
+    }
     </script>
 </html>
