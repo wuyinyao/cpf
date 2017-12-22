@@ -6,7 +6,7 @@
   </body>
    <script>
      if (cpf){
-      cpf.pinreset("[\"resetPin\"],[\"setPinMode\",\"digital\",2,\"OUTPUT\"],[\"setPinMode\",\"digital\",3,\"PWM\"]");
+      cpf.setPinMode('["resetPin"],["setPinMode","digital",2,"OUTPUT"],["setPinMode","digital",3,"PWM"]');
       cpf.sleep(2000);
       cpf.set("white led", 0);
       cpf.set("fan", 0);
