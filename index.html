@@ -1,8 +1,15 @@
-<script>
-  cpf.pinreset("[\"resetPin\"],[\"setPinMode\",\"digital\",2,\"OUTPUT\"],[\"setPinMode\",\"digital\",3,\"PWM\"]");
-  cpf.sleep(2000);
-  cpf.set("fan", 0);
-  cpf.sleep(2000);
-  cpf.sleep("fan",200);
-  cpf.repeat();
-</script>
+<html>
+  <head>
+    <script>
+      cpf.pinreset("[\"resetPin\"],[\"setPinMode\",\"digital\",2,\"OUTPUT\"],[\"setPinMode\",\"digital\",3,\"PWM\"]");
+      cpf.sleep(2000);
+      cpf.set("fan", 0);
+      cpf.sleep(2000);
+      cpf.sleep("fan",200);
+      cpf.repeat();
+    </script>
+  </head>
+  <body>
+    Hello CPF!
+  </body>
+</html>
