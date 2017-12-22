@@ -3,6 +3,8 @@
   </head>
   <body>
     CPF APPBuilder!
+	<input type="button" onclick="turnOnOff(1)" value="Turn On">
+	<input type="button" onclick="turnOnOff(0)" value="Turn Off">
   </body>
    <script>
      if (cpf){
@@ -12,9 +14,16 @@
       cpf.set("fan", 0);
       cpf.sleep(2000);
       cpf.set("white led", 1);
-      cpf.sleep("fan",200);
+      cpf.set("fan",200);
       cpf.repeat();
      }
-     alert(cpf);
+     function turnOnOff(val){
+		   if (cpf){
+		     cpf.set("white led", val);
+		   }
+		   else{
+			    alert("cpf is empty");
+		   }
+	   }
     </script>
 </html>
